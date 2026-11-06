@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><meta content="SwiftMonster accelerates global edge compute with ultra-low-latency infrastructure, distributed caching, and instant deployment tooling." name="description"/><title>SwiftMonster | Ultra-Low Latency Edge Compute</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&amp;family=Rubik:wght@400;500;600&amp;family=Space+Grotesk:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed-dim":"#ffb77d","on-tertiary-container":"#562b00","on-primary-fixed-variant":"#00531b","on-secondary":"#ffffff","border-subtle":"#e2e8f0","on-tertiary":"#ffffff","text-body":"#334155","inverse-surface":"#213145","on-surface":"#0b1c30","surface-container-lowest":"#ffffff","surface-dim":"#cbdbf5","surface-subtle":"#f1f5f9","inverse-on-surface":"#eaf1ff","surface-tint":"#006e26","border-main":"#0f172a","on-secondary-fixed-variant":"#5a00c6","primary-fixed-dim":"#4be269","tertiary-fixed":"#ffdcc3","on-primary-container":"#004013","secondary-fixed":"#eaddff","on-tertiary-fixed":"#2f1500","surface-container-highest":"#d3e4fe","secondary-container":"#8a4cfc","tertiary":"#904d00","on-error-container":"#93000a","surface-base":"#f8fafc","accent-electric":"#00d655","surface-container-high":"#dce9ff","inverse-primary":"#4be269","outline-variant":"#bccbb8","primary-container":"#00b846","background":"#f8f9ff","on-tertiary-fixed-variant":"#6e3900","shadow-ink":"#0f172a","secondary":"#712ae2","surface-hover":"#e2e8f0","on-background":"#0b1c30","on-secondary-container":"#fffbff","on-secondary-fixed":"#25005a","error-container":"#ffdad6","surface-container":"#e5eeff","on-primary":"#ffffff","tertiary-container":"#eb851c","surface-container-low":"#eff4ff","on-primary-fixed":"#002106","on-error":"#ffffff","primary-fixed":"#6cff82","surface-bright":"#f8f9ff","surface":"#f8f9ff","text-muted":"#64748b","outline":"#6d7b6a","text-headline":"#0f172a","surface-card":"#ffffff","secondary-fixed-dim":"#d2bbff","error":"#ba1a1a","on-surface-variant":"#3d4a3c","primary":"#006e26","surface-variant":"#d3e4fe"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-mobile":"0.75rem",gutter:"1.25rem",margin:"2rem","space-xl":"2.5rem","space-lg":"1.5rem","space-xs":"0.25rem","margin-mobile":"1rem","space-sm":"0.5rem","space-md":"1rem"},fontFamily:{"display-hero-mobile":["Space Grotesk"],"body-sm":["Rubik"],"label-lg":["JetBrains Mono"],"label-md":["JetBrains Mono"],"label-sm":["JetBrains Mono"],"headline-xl":["Space Grotesk"],"headline-lg":["Space Grotesk"],"display-hero":["Space Grotesk"],"headline-sm":["Space Grotesk"],"body-lg":["Rubik"],"headline-xl-mobile":["Space Grotesk"],"headline-md":["Space Grotesk"],"body-md":["Rubik"]},fontSize:{"display-hero-mobile":["38px",{lineHeight:"46px",letterSpacing:"-0.02em",fontWeight:"800"}],"body-sm":["14px",{lineHeight:"20px",fontWeight:"400"}],"label-lg":["15px",{lineHeight:"20px",letterSpacing:"0.02em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.04em",fontWeight:"500"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.06em",fontWeight:"500"}],"headline-xl":["44px",{lineHeight:"52px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.01em",fontWeight:"700"}],"display-hero":["64px",{lineHeight:"72px",letterSpacing:"-0.03em",fontWeight:"800"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"headline-xl-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"700"}],"body-md":["16px",{lineHeight:"24px",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-body"><header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1440px] mx-auto px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md"><img alt="SwiftMonster Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjlZ5u4MAbEpMEVp5UahQZh8jWpKmQf8YlOzl-k0SximqkgQs1QF7hHY9fywUfFQtP1aUbdNyzAkItN7SS0Hyfc08muC2SssiN0qm4991r20O5qTc4yunBwNpJ7J9TX2YhTB7M9uJB-qq5qSqc5lTS98IWYNTPlI8Xlg8rDDOQfesMBZTDZyM2D6NmCe8V02_s_FQiBlp1BirGuiIjYYrUdB6G3LKiv90_J1xL98IzXQ"/><span class="font-headline-sm text-headline-sm uppercase text-text-headline tracking-tight">SwiftMonster</span></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a aria-current="page" class="transition-colors bg-primary-container text-on-primary-container font-headline-sm" data-path="products" href="#benchmarks">Products</a><a class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="solutions" href="#benchmarks">Solutions</a><a class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="performance-benchmarks" href="#benchmarks">Performance Benchmarks</a><a class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="pricing" href="#calculator">Pricing</a><a class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="documentation" href="#benchmarks">Docs</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center justify-center font-label-md text-label-md uppercase px-space-md py-space-sm rounded text-on-surface hover:bg-surface-hover hover:text-on-surface transition-all" data-path="sign-in" href="#benchmarks">Sign In</a><a class="inline-flex items-center justify-center font-label-md text-label-md uppercase px-space-lg py-space-sm rounded bg-accent-electric text-text-headline transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5" data-path="deploy-free" href="#benchmarks">Deploy Free</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface py-space-xl">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[350px] bg-gradient-to-b from-accent-electric/15 via-primary-container/5 to-transparent blur-3xl pointer-events-none rounded-full"></div>
+<div class="max-w-[1440px] mx-auto px-margin relative z-10">
+<div class="flex flex-col lg:flex-row items-center gap-space-xl justify-between">
+<!-- Left: Copy & CTAs -->
+<div class="flex flex-col max-w-2xl gap-space-md">
+<!-- Release Badge -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-accent-electric/20 text-on-surface w-fit shadow-sm">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-on-surface font-semibold">v3.4 Turbo Engine Live — 4x Faster Routing</span>
+</div>
+<!-- Hero Headline -->
+<h1 class="font-display-hero text-display-hero text-text-headline tracking-tight leading-none">
+            Unleash <span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">Monstrous Speed</span> Across Every Edge Node
+          </h1>
+<!-- Hero Subheader -->
+<p class="font-body-lg text-body-lg text-text-body max-w-xl">
+            SwiftMonster powers ultra-low latency compute, sub-millisecond edge caching, and real-time inference with zero cold starts across 340+ distributed hyper-nodes.
+          </p>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="px-space-lg py-3 rounded bg-accent-electric text-text-headline font-label-lg text-label-lg tracking-wide uppercase transition-all duration-150 transform hover:-translate-y-1 hover:shadow-xl shadow-md inline-flex items-center gap-space-xs font-bold" href="#calculator">
+<span>Start Free Cluster</span>
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</a>
+<a class="px-space-lg py-3 rounded bg-surface-container text-text-headline font-label-lg text-label-lg tracking-wide uppercase transition-all duration-150 hover:bg-surface-hover shadow-sm inline-flex items-center gap-space-xs" href="#benchmarks">
+<span>Explore Benchmarks</span>
+<span class="material-symbols-outlined text-[18px]">query_stats</span>
+</a>
+</div>
+<!-- Quick Spec Meta -->
+<div class="flex items-center gap-space-lg pt-space-sm text-text-muted font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[16px]">verified</span>
+<span>No credit card required</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[16px]">terminal</span>
+<span>Deploys in under 800ms</span>
+</div>
+</div>
+</div>
+<!-- Right: Real-time Terminal / Code Inspector Preview -->
+<div class="w-full lg:max-w-xl flex flex-col">
+<div class="rounded-xl bg-inverse-surface shadow-2xl p-space-md flex flex-col gap-space-sm text-inverse-on-surface">
+<!-- Window Control Header -->
+<div class="flex items-center justify-between pb-space-xs border-b border-inverse-surface/40">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary-container inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-accent-electric inline-block"></span>
+<span class="font-label-sm text-label-sm text-surface-subtle/70 ml-2 tracking-widest">SM-CLI v3.4.0 — HYPERMESH</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-subtle/10 text-accent-electric">ACTIVE RUNTIME</span>
+</div>
+<!-- Terminal Body -->
+<div class="font-label-md text-label-md space-y-2 py-space-xs">
+<div class="flex items-center gap-2 text-surface-subtle/80">
+<span class="text-accent-electric">$</span>
+<span class="text-surface-bright select-all">curl -sSL https://get.swiftmonster.dev | sh &amp;&amp; swiftmonster deploy --edge</span>
+</div>
+<div class="text-surface-subtle/60 pl-4 font-label-sm text-label-sm space-y-1">
+<p>&gt; Initializing V8 isolate runtime compiler...</p>
+<p>&gt; Bundling wasm artifacts (0.42 MB) [DONE: 48ms]</p>
+<p class="text-accent-electric">&gt; Synchronizing worldwide routing mesh: 340 PoPs pinged</p>
+<div class="flex items-center gap-2 py-1">
+<div class="h-1.5 w-full bg-surface-subtle/20 rounded-full overflow-hidden">
+<div class="h-full bg-accent-electric w-full animate-pulse"></div>
+</div>
+<span class="text-accent-electric font-semibold">100%</span>
+</div>
+</div>
+<div class="rounded bg-surface-subtle/10 p-2.5 text-surface-bright flex flex-col gap-1 text-xs">
+<div class="flex justify-between items-center">
+<span class="text-text-muted">Edge Domain:</span>
+<span class="text-accent-electric font-mono">https://monster-app-production.sm.edge</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-muted">Global Warm Time:</span>
+<span class="text-primary-fixed-dim font-mono font-bold">0.34ms</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-muted">Edge Replication:</span>
+<span class="text-surface-bright font-mono">Synced in 12 Zones</span>
+</div>
+</div>
+</div>
+<!-- Mascot Status Pill -->
+<div class="bg-surface-subtle/5 rounded p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-accent-electric animate-bounce"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-accent-electric animate-bounce delay-100"></span>
+</div>
+<span class="font-label-sm text-label-sm text-accent-electric">Monster Core Telemetry Stream — P99: 0.38ms</span>
+</div>
+<span class="text-xs text-surface-subtle/60 font-mono">1.2ms TLS 1.3</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE TELEMETRY TICKER -->
+<section class="w-full bg-surface-container-low py-space-lg shadow-sm">
+<div class="max-w-[1440px] mx-auto px-margin">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Metric 1 -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-md flex flex-col gap-1 transition-all hover:-translate-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-text-muted">Global P99 Latency</span>
+<span class="material-symbols-outlined text-primary-container text-[20px]">speed</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-text-headline tracking-tight text-primary-container">0.42ms</span>
+<div class="flex items-center gap-1.5 text-xs text-text-muted">
+<span class="w-2 h-2 rounded-full bg-accent-electric"></span>
+<span>Real-time Synthetic Ping</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-md flex flex-col gap-1 transition-all hover:-translate-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-text-muted">SLA Commitment</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">shield</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-text-headline tracking-tight text-secondary">99.999%</span>
+<div class="flex items-center gap-1.5 text-xs text-text-muted">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Zero Failover Dropout</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-md flex flex-col gap-1 transition-all hover:-translate-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-text-muted">Active Global PoPs</span>
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">hub</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-text-headline tracking-tight text-text-headline">320+</span>
+<div class="flex items-center gap-1.5 text-xs text-text-muted">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span>Across 68 Countries</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-md flex flex-col gap-1 transition-all hover:-translate-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-text-muted">Throughput Capacity</span>
+<span class="material-symbols-outlined text-primary-container text-[20px]">swap_vert</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-text-headline tracking-tight text-primary-container">12M+</span>
+<div class="flex items-center gap-1.5 text-xs text-text-muted">
+<span class="w-2 h-2 rounded-full bg-accent-electric"></span>
+<span>Requests / Sec Baseline</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ARCHITECTURE & FEATURE GRID -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-[1440px] mx-auto px-margin flex flex-col gap-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container font-semibold">Engineered For Zero Friction</span>
+<h2 class="font-headline-xl text-headline-xl text-text-headline">Ultra-Low Latency Architecture</h2>
+<p class="font-body-md text-body-md text-text-muted">Replace bloated server fleets with intelligent micro-compute nodes placed directly next to end-users.</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Architecture Status:</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-on-surface font-label-sm text-label-sm font-semibold">Optimal</span>
+</div>
+</div>
+<!-- Bento-style Feature Mosaic -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Feature 1 -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-md flex flex-col justify-between gap-space-md transition-all hover:-translate-y-1.5 hover:shadow-xl">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[28px]">electric_bolt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-headline">Sub-Millisecond Cold Starts</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Instant WebAssembly and customized V8 isolate sandboxes boot in under 0.8ms, eliminating legacy container startup lag permanently.
+            </p>
+</div>
+<div class="bg-surface-subtle p-space-sm rounded-lg flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-text-muted">V8 Sandboxes</span>
+<span class="text-primary-container font-bold">&lt; 0.8ms</span>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-md flex flex-col justify-between gap-space-md transition-all hover:-translate-y-1.5 hover:shadow-xl">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">alt_route</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-headline">Autonomous Traffic Steering</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Real-time AI packet telemetry constantly evaluates BGP hops, dynamically rerouting requests around congested backbones and ISP outages.
+            </p>
+</div>
+<div class="bg-surface-subtle p-space-sm rounded-lg flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-text-muted">Dynamic BGP Matrix</span>
+<span class="text-secondary font-bold">Self-Healing</span>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-md flex flex-col justify-between gap-space-md transition-all hover:-translate-y-1.5 hover:shadow-xl">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[28px]">database</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-headline">Global Distributed Key-Value</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Read-in-memory edge storage replicated worldwide with strong eventual consistency, sub-5ms write propagation, and auto eviction.
+            </p>
+</div>
+<div class="bg-surface-subtle p-space-sm rounded-lg flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-text-muted">Read Latency</span>
+<span class="text-tertiary font-bold">0.15ms Local</span>
+</div>
+</div>
+<!-- Feature 4 -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-md flex flex-col justify-between gap-space-md transition-all hover:-translate-y-1.5 hover:shadow-xl">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[28px]">deployed_code</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-headline">DevOps First Integration</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Instant branch preview URLs for every pull request, native GitHub Actions integration, and official HashiCorp Terraform registry providers.
+            </p>
+</div>
+<div class="bg-surface-subtle p-space-sm rounded-lg flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-text-muted">CI/CD Sync</span>
+<span class="text-primary-container font-bold">Plug &amp; Play</span>
+</div>
+</div>
+</div>
+<!-- Infrastructure Visualization Card -->
+<div class="w-full bg-surface-card rounded-xl p-space-lg shadow-lg flex flex-col md:flex-row items-center gap-space-lg justify-between">
+<div class="flex flex-col gap-space-xs max-w-lg">
+<span class="font-label-sm text-label-sm text-primary-container font-semibold uppercase">Hardware Tier Overdrive</span>
+<h4 class="font-headline-md text-headline-md text-text-headline">Bare-Metal NVMe &amp; 100Gbps Transit</h4>
+<p class="font-body-sm text-body-sm text-text-muted">Every node operates directly on unthrottled fiber interconnects without virtualization hypervisor penalties.</p>
+</div>
+<!-- Micro Graphic: Node Cluster Visual -->
+<div class="w-full md:w-auto flex items-center gap-4">
+<div class="flex flex-col items-center p-3 bg-surface-container rounded-lg shadow-inner">
+<span class="font-label-sm text-label-sm text-text-muted">AMER</span>
+<span class="font-headline-sm text-headline-sm text-primary-container">0.31ms</span>
+</div>
+<div class="w-6 h-0.5 bg-border-subtle"></div>
+<div class="flex flex-col items-center p-3 bg-surface-container rounded-lg shadow-inner">
+<span class="font-label-sm text-label-sm text-text-muted">EMEA</span>
+<span class="font-headline-sm text-headline-sm text-primary-container">0.45ms</span>
+</div>
+<div class="w-6 h-0.5 bg-border-subtle"></div>
+<div class="flex flex-col items-center p-3 bg-surface-container rounded-lg shadow-inner">
+<span class="font-label-sm text-label-sm text-text-muted">APAC</span>
+<span class="font-headline-sm text-headline-sm text-primary-container">0.52ms</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PERFORMANCE BENCHMARK MATRIX SECTION -->
+<section class="w-full py-space-xl bg-surface-container-low" id="benchmarks">
+<div class="max-w-[1440px] mx-auto px-margin flex flex-col gap-space-xl">
+<div class="flex flex-col gap-space-xs text-center items-center max-w-2xl mx-auto">
+<span class="font-label-sm text-label-sm text-primary-container font-semibold uppercase tracking-widest">Scientific Telemetry Testing</span>
+<h2 class="font-headline-xl text-headline-xl text-text-headline">Speed Benchmarks: Zero Compromises</h2>
+<p class="font-body-md text-body-md text-text-muted">Audited with 10,000 concurrent worldwide HTTP/3 TLS connections under synthetic load testing.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left: Side-by-side Visual Bar Chart (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-card rounded-xl p-space-lg shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-text-headline">Cold Start Execution Latency (Lower is Better)</h3>
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Unit: Milliseconds (ms)</span>
+</div>
+<div class="space-y-4 pt-2">
+<!-- SwiftMonster Bar -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-sm font-semibold">
+<span class="flex items-center gap-1.5 text-text-headline">
+<span class="w-2.5 h-2.5 rounded-full bg-accent-electric"></span>
+                  SwiftMonster v3.4 (V8 Isolate)
+                </span>
+<span class="font-label-md text-label-md text-primary-container">0.78 ms</span>
+</div>
+<div class="w-full h-7 bg-surface-subtle rounded-md overflow-hidden p-0.5">
+<div class="h-full bg-accent-electric rounded flex items-center justify-end pr-2 transition-all duration-500" style="width: 8%;">
+<span class="text-[10px] font-bold text-text-headline">TOP</span>
+</div>
+</div>
+</div>
+<!-- Cloudflare Workers Bar -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-muted">Cloudflare Workers</span>
+<span class="font-label-md text-label-md text-text-body">4.60 ms</span>
+</div>
+<div class="w-full h-7 bg-surface-subtle rounded-md overflow-hidden p-0.5">
+<div class="h-full bg-surface-hover rounded transition-all duration-500" style="width: 24%;"></div>
+</div>
+</div>
+<!-- Fastly Compute@Edge Bar -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-muted">Fastly Compute@Edge</span>
+<span class="font-label-md text-label-md text-text-body">12.80 ms</span>
+</div>
+<div class="w-full h-7 bg-surface-subtle rounded-md overflow-hidden p-0.5">
+<div class="h-full bg-surface-hover rounded transition-all duration-500" style="width: 48%;"></div>
+</div>
+</div>
+<!-- Traditional Serverless (AWS Lambda) Bar -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-muted">Traditional Serverless (AWS Lambda Node)</span>
+<span class="font-label-md text-label-md text-error">214.00 ms</span>
+</div>
+<div class="w-full h-7 bg-surface-subtle rounded-md overflow-hidden p-0.5">
+<div class="h-full bg-error-container/60 rounded transition-all duration-500" style="width: 95%;"></div>
+</div>
+</div>
+</div>
+<!-- Chart Footer Note -->
+<div class="pt-space-xs text-xs text-text-muted flex items-center justify-between">
+<span>Benchmark performed across 100 worldwide probes simultaneously.</span>
+<span class="text-primary-container font-semibold">SwiftMonster runs 274x faster than Lambda</span>
+</div>
+</div>
+<!-- Right: Latency & Feature Matrix (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-card rounded-xl p-space-lg shadow-lg flex flex-col gap-space-md">
+<h3 class="font-headline-sm text-headline-sm text-text-headline">Feature Comparison Matrix</h3>
+<div class="flex flex-col gap-space-sm divide-y divide-border-subtle">
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-body">Time to First Byte (TTFB)</span>
+<div class="flex items-center gap-4 font-label-sm text-label-sm">
+<span class="font-bold text-primary-container">1.8ms</span>
+<span class="text-text-muted">vs 18.4ms legacy</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-body">P99 Cold-Start Jitter</span>
+<div class="flex items-center gap-4 font-label-sm text-label-sm">
+<span class="font-bold text-primary-container">± 0.04ms</span>
+<span class="text-text-muted">vs ± 42.0ms legacy</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-body">Global KV Write Propagation</span>
+<div class="flex items-center gap-4 font-label-sm text-label-sm">
+<span class="font-bold text-primary-container">&lt; 5.0ms</span>
+<span class="text-text-muted">vs 800ms legacy</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-body">DDoS Ingress Filtering</span>
+<div class="flex items-center gap-4 font-label-sm text-label-sm">
+<span class="font-bold text-primary-container">Unmetered L7</span>
+<span class="text-text-muted">Tiered add-on</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-body">Edge Memory Max</span>
+<div class="flex items-center gap-4 font-label-sm text-label-sm">
+<span class="font-bold text-primary-container">512MB isolate</span>
+<span class="text-text-muted">128MB standard</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-lg p-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[20px]">insights</span>
+<p class="font-label-sm text-label-sm text-text-headline">
+              Download the complete independent raw telemetry dataset (JSON/CSV).
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SOCIAL PROOF & TESTIMONIALS -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-[1440px] mx-auto px-margin flex flex-col gap-space-xl">
+<!-- Brand Trust Heading -->
+<div class="text-center flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-text-muted">Mission Critical Trust</span>
+<h2 class="font-headline-lg text-headline-lg text-text-headline">Powering Next-Gen Edge Infrastructure</h2>
+</div>
+<!-- Innovator Logos Ticker Banner -->
+<div class="flex flex-wrap items-center justify-center gap-space-xl py-space-md opacity-75">
+<div class="font-display-hero-mobile text-text-muted text-xl uppercase tracking-tighter">APEX•STREAM</div>
+<div class="font-display-hero-mobile text-text-muted text-xl uppercase tracking-tighter">HYPERVECTOR</div>
+<div class="font-display-hero-mobile text-text-muted text-xl uppercase tracking-tighter">NEXUSQUANT</div>
+<div class="font-display-hero-mobile text-text-muted text-xl uppercase tracking-tighter">LUMINA PROTOCOL</div>
+<div class="font-display-hero-mobile text-text-muted text-xl uppercase tracking-tighter">ORBITAL DATA</div>
+</div>
+<!-- Testimonial Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Quote 1 -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-md flex flex-col justify-between gap-space-md">
+<p class="font-body-md text-body-md text-text-body italic">
+            “SwiftMonster cut our checkout pipeline latency from 240ms down to 18ms worldwide. Our conversion conversion jump covered our entire annual infrastructure bill in 12 days.”
+          </p>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<img alt="Marcus Vance" class="w-12 h-12 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8TYkLRJYg0oT6r1R40BDErLiU8rCWFABCDJD6Coh6wgx4q9ihbefDAwHEEP_B0eDIhs11d-2i45k7u0M_ZSb88RA4we0F02KiYhURHXnCmM4H9qLSNT653g4geB_sKUwkz1qgAMrkQ0-sO-Gk0A7V0_bgMPhBv-fP8bGvF1A7yVSoPukZdqsy9YHlBNpJR_K4iAODNJwUvuZZpdkTj9-wVWzr42_dWvzCMY436SE4"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm text-text-headline font-semibold">Marcus Vance</span>
+<span class="font-label-sm text-label-sm text-text-muted">Chief Architect, HyperVector</span>
+</div>
+</div>
+</div>
+<!-- Quote 2 -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-md flex flex-col justify-between gap-space-md">
+<p class="font-body-md text-body-md text-text-body italic">
+            “Sub-millisecond cold starts changed everything for our real-time gaming state synchronization. We deployed across all 320 nodes in seconds with their CLI.”
+          </p>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<img alt="Dr. Elena Rostova" class="w-12 h-12 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASkuOxMilpN1U2nLbucIoH_aFXFaT5xt2Z7DP68N8bdQAmz3qSVIYIAWyhMDGNFbJj7M6hgU-3FlUZWuNPCjCjPOFuD6p5MsjU-DyL7c7nSv_CCWkxBg00ibX45siKRyIVGQ1V1DQ_H4uZN-1VfuA-79M3MVoPim0CpVHjalmLvzHguy2gX8-nyoGy2jgtA1SMJ0fItiuGqbQVwENMcLt5w2Kqlqmpwm2ZnNOm2ufR"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm text-text-headline font-semibold">Dr. Elena Rostova</span>
+<span class="font-label-sm text-label-sm text-text-muted">Head of Infra, ApexStream</span>
+</div>
+</div>
+</div>
+<!-- Quote 3 -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-md flex flex-col justify-between gap-space-md">
+<p class="font-body-md text-body-md text-text-body italic">
+            “The autonomous packet steering automatically rerouted our EU traffic during an undersea cable degradation without a single dropped WebSocket connection.”
+          </p>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<img alt="Tariq Thorne" class="w-12 h-12 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAsUiip56xASlHiJOUxt-kx3ebfzMRN4jBpu6n0w_z88cnDRWha7PCUAfAl3Pv8iS7xWAOgPAxHFHcJ7I-x7J1bm6aRXxYRDsdCE7aa7TRRYNiJ5Lnm13rXp3C34oiGqprfUKTGrPehNRzeLDu2gTrwPENqWHFO6G8xYPTULFHzewDBadcmrLF-iDBQgBzQzsCvi-T-j6yRsUHQzsHg6kjGWgHCfGutuzv2x-IQBN7"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm text-text-headline font-semibold">Tariq Thorne</span>
+<span class="font-label-sm text-label-sm text-text-muted">VP Systems, Lumina Protocol</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE PRICING CALCULATOR -->
+<section class="w-full py-space-xl bg-surface-container-low" id="calculator">
+<div class="max-w-[1440px] mx-auto px-margin flex flex-col gap-space-xl">
+<div class="text-center flex flex-col gap-space-xs max-w-xl mx-auto">
+<span class="font-label-sm text-label-sm text-primary-container font-semibold uppercase tracking-widest">Predictable Micro-Billing</span>
+<h2 class="font-headline-xl text-headline-xl text-text-headline">Real-Time Cost Simulator</h2>
+<p class="font-body-md text-body-md text-text-muted">Pay purely for milliseconds of compute used. Never pay for idle capacity or cold start overhead.</p>
+</div>
+<div class="bg-surface-card rounded-xl p-space-lg md:p-space-xl shadow-xl max-w-4xl mx-auto w-full flex flex-col md:flex-row gap-space-xl items-center">
+<!-- Left: Interactive Sliders -->
+<div class="flex-1 w-full flex flex-col gap-space-md">
+<!-- Slider 1: Requests -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-center">
+<span class="font-headline-sm text-sm text-text-headline">Monthly Requests</span>
+<span class="font-label-lg text-label-lg text-primary-container font-bold" id="requestsLabel">25M</span>
+</div>
+<input aria-label="Monthly requests" class="w-full accent-accent-electric cursor-pointer" id="requestsSlider" max="100" min="1" type="range" value="25"/>
+<div class="flex justify-between text-xs text-text-muted font-label-sm text-label-sm">
+<span>1M</span>
+<span>50M</span>
+<span>100M+</span>
+</div>
+</div>
+<!-- Slider 2: CPU Compute Duration -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex justify-between items-center">
+<span class="font-headline-sm text-sm text-text-headline">Avg Execution Time</span>
+<span class="font-label-lg text-label-lg text-secondary font-bold" id="durationLabel">12ms</span>
+</div>
+<input aria-label="Average execution time" class="w-full accent-secondary cursor-pointer" id="durationSlider" max="100" min="1" type="range" value="12"/>
+<div class="flex justify-between text-xs text-text-muted font-label-sm text-label-sm">
+<span>1ms (Micro)</span>
+<span>50ms (Medium)</span>
+<span>100ms (Heavy API)</span>
+</div>
+</div>
+<div class="bg-surface-subtle p-space-sm rounded-lg flex items-center justify-between text-xs text-text-muted">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span>
+              Included: 1TB Bandwidth &amp; 10M KV Reads
+            </span>
+<span class="font-bold text-text-headline">Free Tier Active</span>
+</div>
+</div>
+<!-- Right: Result Card -->
+<div class="w-full md:w-80 bg-surface-container rounded-xl p-space-lg flex flex-col items-center justify-center text-center gap-space-md shadow-inner">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Projected Monthly Total</span>
+<div class="flex items-baseline gap-1">
+<span class="font-display-hero text-display-hero text-text-headline leading-none" id="priceDisplay">$18</span>
+<span class="font-label-md text-label-md text-text-muted">/mo</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">
+            Includes global DDoS protection, sub-second routing, and unlimited dev seats.
+          </p>
+<a class="w-full py-3 rounded bg-accent-electric text-text-headline font-label-md text-label-md uppercase tracking-wide text-center font-bold shadow-md hover:bg-primary-container transition-all" href="#calculator">
+            Lock In Rates
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL CTA OVERDRIVE BANNER -->
+<section class="w-full py-space-xl bg-surface relative overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-margin relative z-10">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-xl p-space-xl md:p-16 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-space-xl">
+<div class="flex flex-col gap-space-sm max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-electric/20 text-accent-electric w-fit font-label-sm text-label-sm font-semibold tracking-wider uppercase">
+<span>Instant Provisioning Mesh</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-surface-bright leading-tight">
+            Scale from zero to a billion requests without breaking a sweat.
+          </h2>
+<p class="font-body-lg text-body-lg text-surface-subtle/80 max-w-xl">
+            Get your code running on our worldwide bare-metal edge cluster in less than 60 seconds with simple zero-config tooling.
+          </p>
+</div>
+<div class="flex flex-col sm:flex-row md:flex-col gap-space-md w-full md:w-auto shrink-0">
+<a class="px-space-xl py-4 rounded bg-accent-electric text-text-headline font-label-lg text-label-lg uppercase tracking-wide text-center font-bold shadow-xl transition-all transform hover:-translate-y-1" href="#calculator">
+            Start Free Cluster Now
+          </a>
+<a class="px-space-xl py-4 rounded bg-surface-subtle/10 text-surface-bright font-label-lg text-label-lg uppercase tracking-wide text-center hover:bg-surface-subtle/20 transition-all" href="mailto:hello@swiftmonster.dev">
+            Talk to an Edge Architect
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Script for Micro-billing Calculator -->
+<script>
+    (function initCalculator() {
+      const requestsSlider = document.getElementById('requestsSlider');
+      const durationSlider = document.getElementById('durationSlider');
+      const requestsLabel = document.getElementById('requestsLabel');
+      const durationLabel = document.getElementById('durationLabel');
+      const priceDisplay = document.getElementById('priceDisplay');
+
+      if (!requestsSlider || !durationSlider || !priceDisplay) return;
+
+      function updateCalculation() {
+        const reqMillions = parseInt(requestsSlider.value, 10);
+        const durationMs = parseInt(durationSlider.value, 10);
+
+        requestsLabel.textContent = reqMillions + 'M';
+        durationLabel.textContent = durationMs + 'ms';
+
+        // Calculation: Free tier covers first 5M requests.
+        // Base: $0.40 per million requests + $0.00002 per million-ms compute.
+        const billableReqs = Math.max(0, reqMillions - 5);
+        const computeFactor = (billableReqs * durationMs * 0.05);
+        const requestFee = billableReqs * 0.45;
+        const total = Math.max(0, Math.round(requestFee + computeFactor));
+
+        priceDisplay.textContent = '$' + total;
+      }
+
+      requestsSlider.addEventListener('input', updateCalculation);
+      durationSlider.addEventListener('input', updateCalculation);
+      updateCalculation();
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl"><div class="max-w-[1440px] mx-auto px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="SwiftMonster Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjlZ5u4MAbEpMEVp5UahQZh8jWpKmQf8YlOzl-k0SximqkgQs1QF7hHY9fywUfFQtP1aUbdNyzAkItN7SS0Hyfc08muC2SssiN0qm4991r20O5qTc4yunBwNpJ7J9TX2YhTB7M9uJB-qq5qSqc5lTS98IWYNTPlI8Xlg8rDDOQfesMBZTDZyM2D6NmCe8V02_s_FQiBlp1BirGuiIjYYrUdB6G3LKiv90_J1xL98IzXQ"/><span class="font-headline-sm text-headline-sm uppercase text-text-headline tracking-tight">SwiftMonster</span></div><p class="font-body-sm text-body-sm text-text-muted max-w-sm">Ultra-low latency global acceleration mesh and developer edge compute runtime engineered for extreme velocity and instant scalability.</p><div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-primary-container/15 text-primary w-fit"><span class="w-2 h-2 rounded-full bg-accent-electric animate-pulse"></span><span class="font-label-sm text-label-sm uppercase tracking-wider">All 340 Edge Nodes Operational</span></div></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-md text-label-md uppercase text-text-headline tracking-wider">Edge Products</h4><ul class="flex flex-col gap-space-xs"><li class="font-body-sm text-body-sm text-text-muted hover:text-on-surface transition-colors cursor-pointer">HyperCompute V8</li><li class="font-body-sm text-body-sm text-text-muted hover:text-on-surface transition-colors cursor-pointer">Turbo Cache CDN</li><li class="font-body-sm text-body-sm text-text-muted hover:text-on-surface transition-colors cursor-pointer">Zero-Latency WAF</li><li class="font-body-sm text-body-sm text-text-muted hover:text-on-surface transition-colors cursor-pointer">Stateful Key-Value</li><li class="font-body-sm text-body-sm text-text-muted hover:text-on-surface transition-colors cursor-pointer">Telemetry Pulse</li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-md text-label-md uppercase text-text-headline tracking-wider">Developers</h4><ul class="flex flex-col gap-space-xs"><li class="font-body-sm text-body-sm text-text-muted hover:text-on-surface transition-colors cursor-pointer">Documentation</li><li class="font-body-sm text-body-sm text-text-muted hover:text-on-surface transition-colors cursor-pointer">Edge CLI Tools</li><li class="font-body-sm text-body-sm text-text-muted hover:text-on-surface transition-colors cursor-pointer">Global Benchmarks</li><li class="font-body-sm text-body-sm text-text-muted hover:text-on-surface transition-colors cursor-pointer">API Reference</li><li class="font-body-sm text-body-sm text-text-muted hover:text-on-surface transition-colors cursor-pointer">Network Map</li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-md text-label-md uppercase text-text-headline tracking-wider">System Pulse</h4><p class="font-body-sm text-body-sm text-text-muted">Subscribe to telemetry releases, runtime changelogs, and outage alerts.</p><div class="flex flex-col gap-space-xs"><input class="w-full px-space-md py-space-sm rounded bg-surface-card text-text-headline font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-accent-electric" placeholder="developer@org.internal" type="email"/><button class="w-full px-space-md py-space-sm rounded bg-accent-electric text-text-headline font-label-md text-label-md uppercase hover:bg-primary-container hover:text-on-primary-container transition-colors" type="button">Subscribe Dispatch</button></div></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-text-muted"><p>© 2025 SwiftMonster Inc. High-velocity developer infrastructure.</p><div class="flex items-center gap-space-lg"><span class="hover:text-on-surface transition-colors cursor-pointer">Privacy Engine</span><span class="hover:text-on-surface transition-colors cursor-pointer">Terms of Mesh</span><span class="hover:text-on-surface transition-colors cursor-pointer">Security Protocol</span></div></div></div></footer></body></html>
